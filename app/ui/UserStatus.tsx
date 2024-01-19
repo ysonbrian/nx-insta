@@ -1,10 +1,8 @@
-'use client'
-import React, { useEffect, useState } from 'react'
-import { getSession, signIn, signOut, useSession } from 'next-auth/react'
+"use client"
+import React, { useEffect, useState } from "react"
+import { signIn, signOut } from "next-auth/react"
 
-import { revalidatePath } from 'next/cache'
-import { auth } from '../api/auth/[...nextauth]/route'
-import Image from 'next/image'
+import Image from "next/image"
 
 type UserProp = {
   email: string
@@ -13,9 +11,8 @@ type UserProp = {
 }
 
 export default function UserStatus({ session }: any) {
-  const [user, setUser] = useState<UserProp>({ email: '', image: '', name: '' })
-  console.log('user', user)
-  console.log('session', session)
+  const [user, setUser] = useState<UserProp>({ email: "", image: "", name: "" })
+
   useEffect(() => {
     if (session) {
       setUser(session.user)
@@ -26,11 +23,11 @@ export default function UserStatus({ session }: any) {
   }
 
   if (!session) {
-    console.log('INSIDE!')
+    console.log("INSIDE!")
     return (
       <button
         onClick={() => {
-          signIn()
+          signIn("google", { callbackUrl: "/" })
         }}
       >
         Sign In

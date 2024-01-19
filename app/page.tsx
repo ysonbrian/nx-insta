@@ -1,11 +1,12 @@
 // 'use client'
 
 // import { useSession, signIn, signOut } from 'next-auth/react'
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
-import { redirect } from 'next/navigation'
-import { revalidatePath } from 'next/cache'
-import { auth } from './api/auth/[...nextauth]/auth'
+import { useEffect } from "react"
+import { useRouter } from "next/router"
+import { redirect } from "next/navigation"
+import { revalidatePath } from "next/cache"
+import { auth } from "../auth"
+import LoginButton from "./components/auth/login-button"
 // import { signOut } from './api/auth/[...nextauth]/route'
 
 export default async function Home() {
@@ -43,9 +44,8 @@ export default async function Home() {
         <a href='/api/auth/signin'>sign in</a>
         <a href='/protected'>protected route</a>
       </main> */}
-      <main className='flex flex-col gap-3'>
-        <h1>My Custom Auth Page</h1>
-        {!session && <p>Not logged in!</p>}
+      <main className="flex flex-col gap-3 justify-center items-center w-full">
+        {!session && <LoginButton />}
         {session && <p>Logged in!</p>}
       </main>
     </>

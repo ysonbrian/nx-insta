@@ -5,7 +5,7 @@ import { VscDiffAdded } from 'react-icons/vsc'
 import Link from 'next/link'
 // import { auth } from '../api/auth/[...nextauth]/route'
 import UserStatus from './UserStatus'
-import { auth } from '../api/auth/[...nextauth]/auth'
+import { auth } from '../../auth'
 
 const NAV_LINKS = [
   { src: '/', icon: <HiOutlineHome size={22} /> },

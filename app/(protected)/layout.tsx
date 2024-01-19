@@ -1,5 +1,5 @@
-import { redirect } from 'next/navigation'
-import { auth } from '../api/auth/[...nextauth]/route'
+import { redirect } from "next/navigation"
+import { auth } from "../api/auth/[...nextauth]/route"
 
 export default async function Layout({
   children,
@@ -8,7 +8,7 @@ export default async function Layout({
 }) {
   const session = await auth()
 
-  if (!session) return redirect('/')
+  if (!session) return redirect("/")
 
   return <>{children}</>
 }
