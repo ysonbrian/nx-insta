@@ -19,16 +19,14 @@ export default function UserStatus({ session }: any) {
     }
   }, [session])
   const handleSignOut = async () => {
-    console.log("hahaha")
     await signOut()
   }
 
   if (!session) {
-    console.log("INSIDE!")
     return (
       <button
-        onClick={() => {
-          signIn("google", { callbackUrl: "/" })
+        onClick={async () => {
+          await signIn("google", { callbackUrl: "/" })
         }}
       >
         Sign In

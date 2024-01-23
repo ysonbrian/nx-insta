@@ -8,8 +8,5 @@ export const {
   signOut,
 } = NextAuth({
   ...authConfig,
-  pages: {
-    signIn: "/auth/login",
-    error: "/auth/error", // Error code passed in query string as ?error=
-  },
+  session: { strategy: "jwt" },
 })
