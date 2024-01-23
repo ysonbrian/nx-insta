@@ -19,6 +19,7 @@ export default function UserStatus({ session }: any) {
     }
   }, [session])
   const handleSignOut = async () => {
+    console.log("hahaha")
     await signOut()
   }
 

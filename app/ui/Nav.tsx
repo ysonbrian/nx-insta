@@ -1,20 +1,20 @@
-import React, { Suspense } from 'react'
-import { HiOutlineHome } from 'react-icons/hi2'
-import { FiSearch } from 'react-icons/fi'
-import { VscDiffAdded } from 'react-icons/vsc'
-import Link from 'next/link'
+import React, { Suspense } from "react"
+import { HiOutlineHome } from "react-icons/hi2"
+import { FiSearch } from "react-icons/fi"
+import { VscDiffAdded } from "react-icons/vsc"
+import Link from "next/link"
 // import { auth } from '../api/auth/[...nextauth]/route'
-import UserStatus from './UserStatus'
-import { auth } from '../../auth'
+import UserStatus from "./UserStatus"
+import { auth } from "@/auth"
 
 const NAV_LINKS = [
-  { src: '/', icon: <HiOutlineHome size={22} /> },
+  { src: "/", icon: <HiOutlineHome size={22} /> },
   {
-    src: 'search',
+    src: "search",
     icon: <FiSearch size={22} />,
   },
   {
-    src: 'upload',
+    src: "upload",
     icon: <VscDiffAdded size={22} />,
   },
 ]

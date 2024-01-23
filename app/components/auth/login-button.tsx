@@ -9,7 +9,7 @@ export default function LoginButton() {
   const [isLoading, setIsLoading] = useState<boolean>(false)
   const onClick = async (provider: string) => {
     setIsLoading(true)
-    await signIn(provider, { callbackUrl: LOGIN_PAGE })
+    await signIn(provider, { callbackUrl: "/" })
     setIsLoading(false)
   }
   return (
