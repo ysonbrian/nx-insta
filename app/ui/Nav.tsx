@@ -21,6 +21,7 @@ const NAV_LINKS = [
 
 export default async function Nav() {
   const session = await auth()
+  console.log("session", session)
 
   return (
     <nav className={`flex justify-between bg-white px-56 py-4`}>

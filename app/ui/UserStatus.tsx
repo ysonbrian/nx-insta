@@ -21,16 +21,15 @@ export default function UserStatus({ session }: any) {
   const handleSignOut = async () => {
     await signOut()
   }
+  const handleSignIn = async () => {
+    await signIn("google", { callbackUrl: "/" })
+  }
 
   if (!session) {
     return (
-      <button
-        onClick={async () => {
-          await signIn("google", { callbackUrl: "/" })
-        }}
-      >
-        Sign In
-      </button>
+      <form onSubmit={handleSignIn}>
+        <button type="submit">Sign In</button>
+      </form>
     )
   }
 
@@ -38,7 +37,7 @@ export default function UserStatus({ session }: any) {
     <div>
       <div className={`flex gap-2`}>
         <Image
-          src={user.image}
+          src={session.user.image || user.image}
           width={30}
           height={30}
           alt={user.email}
