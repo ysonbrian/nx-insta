@@ -1,6 +1,6 @@
 "use client"
 
-import { GridLoader } from "react-spinners"
+import { PropagateLoader } from "react-spinners"
 import useSWR from "swr"
 import "react-multi-carousel/lib/styles.css"
 import Link from "next/link"
@@ -20,8 +20,9 @@ export default function FollowingBar() {
   return (
     <section className="w-full flex justify-center items-center p-4 shadow-sm shadow-neutral-300 mb-4 rounded-lg min-h-[90px] overflow-x-auto">
       {isLoading ? (
-        <GridLoader size={8} color="#4036d6" />
+        <PropagateLoader color="#36d7b7" />
       ) : (
+        // <div>Loading..</div>
         (!users || users.length === 0) && <p>{`You don't have following`}</p>
       )}
       {users && users.length > 0 && (
